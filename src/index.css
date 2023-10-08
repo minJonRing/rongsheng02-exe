@@ -1,0 +1,53 @@
+html,
+body {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+}
+
+#app {
+  height: 100%;
+}
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.text-family {
+  font-family: 'SourceHanSansCN Reqular', 'SourceHanSansCN Medium';
+}
+
+.text-mark {
+  color: #27b8e8;
+}
+
+.text-mark-2 {
+  color: #eab728;
+}
+
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-mid {
+  align-items: center;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
