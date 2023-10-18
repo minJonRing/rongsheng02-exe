@@ -87,7 +87,8 @@ export default {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-
+  transform-origin: 0 0;
+  transform: matrix(0.8, 0, 0, 0.7142, 0, 0);
 
 
   .video {
