@@ -109,10 +109,12 @@ export default {
 
     .page {
         position: absolute;
-        height: 722px;
-        width: 360px;
+        // height: 722px;
+        // width: 360px;
+        height: 1000px;
+        width: 500px;
 
-
+        transform-style: preserve-3d;
 
         .bg {
             position: absolute;
@@ -156,9 +158,11 @@ export default {
             clip-path: polygon(var(--path));
             padding: 0 32px 0 10px;
             transform-origin: 0 100%;
-            transform: rotate(2deg);
+            transform: rotate(1deg);
             opacity: 0;
-            transition-duration: 600ms;
+            // visibility: hidden;
+            will-change: transform opacity;
+            transition-duration: 300ms;
 
             &.other {
                 padding: 60px 32px 60px 10px;
@@ -185,9 +189,10 @@ export default {
                     padding: 8px 0;
 
                     .cn {
-                        font-size: 12px;
-                        line-height: 22px;
-                        text-indent: 24px;
+                        font-size: 18px;
+                        line-height: 28px;
+                        text-indent: 36px;
+                        -webkit-font-smoothing: antialiased;
 
                         &.wrap {
                             text-indent: 0;
@@ -204,7 +209,7 @@ export default {
                 color: #fff;
                 text-align: center;
                 font-weight: bold;
-                padding: 30px 0 10px;
+                padding: 20px 0 10px;
 
                 .no {
                     position: absolute;
@@ -221,7 +226,7 @@ export default {
                 }
 
                 .en {
-                    font-size: 12px;
+                    font-size: 18px;
                     font-weight: 100;
                     word-break: break-all;
                     word-wrap: break-word;
@@ -233,11 +238,11 @@ export default {
                 padding: 8px 0;
 
                 .cn {
-                    font-size: 16px;
-                    line-height: 26px;
-                    text-indent: 32px;
-                    // padding: 8px 0;
+                    font-size: 23px;
+                    line-height: 34px;
+                    text-indent: 46px;
                     font-weight: bold;
+                    -webkit-font-smoothing: antialiased;
 
                     &.wrap {
                         text-indent: 0;
@@ -245,12 +250,13 @@ export default {
                 }
 
                 .en {
-                    font-size: 14px;
-                    text-indent: 28px;
-                    line-height: 22px;
+                    font-size: 22px;
+                    text-indent: 44px;
+                    line-height: 30px;
                     word-break: break-all;
                     word-wrap: break-word;
                     font-weight: bold;
+                    -webkit-font-smoothing: antialiased;
 
                     &.wrap {
                         text-indent: 0;
@@ -261,13 +267,15 @@ export default {
             &.animaIn {
                 // animation: animain 600ms ease-out forwards;
                 opacity: 1;
+                // visibility: inherit;
                 transform: rotate(0);
             }
 
             &.animaOut {
                 // animation: animaOut 1000ms ease-in;
                 opacity: 0;
-                transform: rotate(-2deg);
+                // visibility: hidden;
+                transform: rotate(-1deg);
             }
         }
 

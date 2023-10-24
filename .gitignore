@@ -24,3 +24,4 @@ pnpm-debug.log*
 src/assets
 .vite
 *.zip
+modules copy

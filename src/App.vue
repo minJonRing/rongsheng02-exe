@@ -5,7 +5,9 @@
         <source :src="StartVideo" type="video/mp4">
       </video>
     </div>
-    <Index :class="['index', active ? 'active' : '', move ? 'move' : '']" :active="active" />
+    <Index :class="['index', active ? 'active' : '']" :active="active" :move="move" />
+    <!-- <div class="aaa" @click="active = !active">active</div>
+    <div class="aaa" @click="move = !move">move</div> -->
   </div>
 </template>
 
@@ -90,6 +92,18 @@ export default {
   transform-origin: 0 0;
   transform: matrix(0.8, 0, 0, 0.7142, 0, 0);
 
+  .aaa {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    font-size: 50px;
+    color: #fff;
+    z-index: 99;
+
+    &~.aaa {
+      left: 400px;
+    }
+  }
 
   .video {
     position: absolute;

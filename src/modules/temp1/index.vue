@@ -149,7 +149,7 @@ export default {
             if (data) {
                 this.index = this.switchElement1
             } else {
-                this.index = -1
+                // this.index = -1
             }
         },
         // 元素切换

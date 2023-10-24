@@ -2,14 +2,18 @@
     <div class="module">
         <Background />
         <div class="layout">
-            <Temp1 :active="active" />
-            <div style="width: 210px;" />
-            <Temp2 :active="active" />
-            <Temp3 :active="active" />
-            <Temp4 :active="active" />
-            <Temp5 :active="active" />
-            <Temp6 :active="active" />
             <Temp7 :active="active" />
+            <div class="other">
+                <div :class="['translate', move ? 'move' : '']">
+                    <div style="width: 210px;" />
+                    <Temp1 :active="active" />
+                    <Temp2 :active="active" />
+                    <Temp3 :active="active" />
+                    <Temp4 :active="active" />
+                    <Temp5 :active="active" />
+                    <Temp6 :active="active" />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -28,7 +32,11 @@ export default {
         active: {
             type: Boolean,
             default: false
-        }
+        },
+        move: {
+            type: Boolean,
+            default: false
+        },
     },
     components: {
         Background,
@@ -46,17 +54,42 @@ export default {
 <style lang="scss" scoped>
 .module {
     position: relative;
-    width: 11128px;
+    width: 100%;
     height: 100%;
 
     .layout {
         position: absolute;
-        width: 11128px;
+        // width: 11128px;
+        width: 100%;
         height: 100%;
         top: 0;
         left: 0;
-        display: flex;
         z-index: 99;
+
+        .temp7 {
+            position: relative;
+            z-index: 9;
+        }
+
+        .other {
+            position: absolute;
+            width: calc(100% - 2470px);
+            height: 100%;
+            left: 2470px;
+            top: 0;
+            overflow: hidden;
+            display: flex;
+
+            .translate {
+                display: flex;
+                transition-duration: 2000ms;
+
+                &.move {
+                    // transform: matrix(1, 0, 0, 1, -970, 0);
+                    margin-left: -1100px
+                }
+            }
+        }
     }
 }
 </style>

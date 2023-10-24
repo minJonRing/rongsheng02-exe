@@ -1,5 +1,6 @@
 <template>
     <div class="temp7">
+        <img class="background-image" :src="Img9" />
         <div class="relative">
             <div class="bg-7">
                 <img class="brid b-1" :src="Brid" />
@@ -130,6 +131,7 @@
 <script>
 import Title from './components/title.vue'
 import Brid from '@/assets/temp7/brid.png'
+import Img9 from '@/assets/background/mini/9.png'
 // echart
 import E1 from './left/e1.vue'
 import E2 from './left/e2.vue'
@@ -151,6 +153,7 @@ import MidNum from './mid.vue'
 export default {
     components: {
         Title,
+
         // left
         E1,
         E2,
@@ -169,7 +172,8 @@ export default {
     },
     data() {
         return {
-            Brid
+            Brid,
+            Img9,
         }
     }
 }
@@ -178,10 +182,20 @@ export default {
 <style lang="scss" scoped>
 .temp7 {
     width: 2790px;
-    padding-left: 325px;
+
+    // padding-left: 325px;
+    .background-image {
+        position: absolute;
+        top: -15px;
+        left: 0;
+        transform-origin: center center;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        z-index: 1;
+    }
 
     .relative {
         position: relative;
+        z-index: 2;
 
         .bg-7 {
             position: absolute;
@@ -197,17 +211,17 @@ export default {
 
                 &.b-1 {
                     top: 143px;
-                    right: 190px;
+                    right: 230px;
                 }
 
                 &.b-2 {
                     top: 237px;
-                    right: 370px;
+                    right: 410px;
                 }
 
                 &.b-3 {
                     top: 370px;
-                    right: 210px;
+                    right: 300px;
                     transform: matrix(0.8, 0, 0, 0.8, 0, 0);
                 }
 

@@ -11,7 +11,7 @@
             <img class="img-7" :src="Img7" />
             <img class="img-8" :src="Img8" />
         </div>
-        <!-- <img class="img-9" :src="Img9" /> -->
+        <img class="img-9" :src="Img9" />
         <img class="bird" :src="Bird" />
         <!-- rect -->
         <Rect class="r1" />
@@ -63,12 +63,10 @@ export default {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 11128px;
     height: 100%;
     background-color: rgba(193, 46, 26, .02);
     overflow: hidden;
-    transform-origin: center center;
-    transform: matrix(-1, 0, 0, 1, 0, 0);
 
     img {
         position: absolute;

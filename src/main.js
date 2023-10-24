@@ -1,6 +1,6 @@
 import { initUdp } from "./udp/index";
 
-const { app, BrowserWindow, ipcMain, Menu, dialog } = require("electron");
+const { app, BrowserWindow, ipcMain, Menu, screen, dialog } = require("electron");
 const path = require("path");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -13,21 +13,21 @@ if (require("electron-squirrel-startup")) {
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
-    // fullscreen: true,
+    width: screen.getPrimaryDisplay().workAreaSize.width,
+    height: screen.getPrimaryDisplay().workAreaSize.height,
+    frame: false,
+    fullscreen: MAIN_WINDOW_VITE_DEV_SERVER_URL ? false : true,
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },
-    // frame: false,
     // transparent: true
   });
-  mainWindow.setFullScreen(true);
   Menu.setApplicationMenu(null)
   // udp进程
   initUdp({
     success: (msg, info) => {
       const value = msg.toString();
+      console.log(value)
       mainWindow.webContents.send("uploadValue", value);
     },
   });
@@ -37,12 +37,10 @@ const createWindow = () => {
     mainWindow.loadURL(MAIN_WINDOW_VITE_DEV_SERVER_URL);
     mainWindow.webContents.openDevTools();
   } else {
-    // mainWindow.loadFile(path.join(__dirname, `../../dist/index.html`));
     mainWindow.loadFile(path.join(__dirname, `../renderer/${MAIN_WINDOW_VITE_NAME}/index.html`));
   }
 
   // Open the DevTools.
-
   // 全屏
   // mainWindow.maximize()
 };

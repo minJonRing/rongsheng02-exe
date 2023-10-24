@@ -148,9 +148,9 @@ export default {
                 padding: 8px 0;
 
                 .cn {
-                    font-size: 12px;
-                    line-height: 22px;
-                    text-indent: 24px;
+                    font-size: 18px;
+                    line-height: 28px;
+                    text-indent: 36px;
 
                     &.wrap {
                         text-indent: 0;
